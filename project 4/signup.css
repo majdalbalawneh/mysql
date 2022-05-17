@@ -1,0 +1,74 @@
+
+body{
+    margin: 0;
+    background-color: #ede9ee;
+}
+
+*{
+    box-sizing: border-box;
+}
+
+
+.btn{
+ 
+    background-color: rgb(252, 241, 241);
+    color: rgb(252, 241, 241);
+    border-radius: 5px;
+    margin-left: 65%;
+    display: inline-block;
+}
+
+
+.table{
+    width: fit-content;
+    margin: auto;
+    font-size: 19px;
+    background-color: #d781d4;
+    color: white;
+    padding: 25px;
+    padding-bottom: 10px;
+    border-radius: 5px;
+}
+
+.label{
+    margin-right: 5px;
+    display: inline-block;
+}
+
+.label, input{
+    font-family: sans-serif;
+}
+
+input{
+    padding: 5px;
+    font-size: .8rem;
+    
+}
+.date{
+    width: 100%;
+}
+
+
+
+
+
+@media screen and (max-width: 390px) {
+
+
+ 
+
+
+.label{
+    font-size: 4.2vw;
+}
+
+input{
+    padding: 3px;
+    font-size: .6rem;
+    
+}
+.table{
+    padding: 0;
+}
+
+}
