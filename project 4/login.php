@@ -9,26 +9,55 @@ if (isset($_POST['loginsubmit'])) {
     $pass = $_POST['passlog'];
 
     // /////
-    $sqllogin="SELECT * FROM login;";
-    $result= mysqli_query($conn,$sqllogin);
+    $sqllog="SELECT * FROM login;";
+    $result= mysqli_query($conn,$sqllog);
     $result_check= mysqli_num_rows($result);
+    $counter=1;
+    if($result_check > 0)
+    {
+    while($row = mysqli_fetch_assoc($result)){
+    echo $result;
+    }}}
+        
+    //     if($row["username"] == $fn &&  $row["passwordd"] == $pass){
+    //         $_SESSION["e"]= $row["email"];
+    //         $_SESSION["userName"]= $row["username"];
+    //         $_SESSION["ph"]= $row["phon"];
+    //         $last_login = date("Y-m-d  h:i:s");
+    //         $id= $row["id"];
+    //         $query= "UPDATE users_data SET last_login='$last_login' WHERE id=$id;";
+    //         $x= mysqli_query($conn , $query);
+    //         if($row["admin"] == '1'){
+    //             header('Location:Admin.php');
+    //         }else{
+    //             header('Location:welcome.php');
+    //         }
+    //     }else{
+    //         if($counter == $result_check){
+    //             echo "<span style='color: red;'> The Email or password is wrong </span>";
+    //         }else{
+    //             $counter++;
+    //         }
+    //     }
+    // }}}
 
     
-    if($result_check > 0){
-        while ($row = mysqli_fetch_assoc($result)){
-            if(($fn == $row['fn']) && ($p ==$row['p'])){
-                header('location: welcome.php');
-                $row['ulog']= date("d-m-Y - h:i:sa");
-            }else{
-                $msg = "Invalid Login Details";
-            }
-        }
-    }else{
-        echo "invalid data";
-    }
-    if (($fn == $admin['admin']) && ($p == $admin['adminpassword'])) {
-    header('location: Admin.php');
-}}
+//     if($result_check > 0){
+//         while ($row = mysqli_fetch_assoc($result)){
+
+//             if(($fn == $row['fn']) && ($p ==$row['p'])){
+//                 header('location: welcome.php');
+//                 $row['ulog']= date("d-m-Y - h:i:sa");
+//             }else{
+//                 $msg = "Invalid Login Deta";
+//             }
+//         }
+//     }else{
+//         echo "invalid data ";
+//     }
+//     if (($admin == $admin['admin']) && ($p == $admin['adminpassword'])) {
+//     header('location: Admin.php');
+// }}
 
 //     if (( $username == $admin['admin']) && ($pass == $admin['adminpassword'])) {
 //         header('location: Admin.php');
